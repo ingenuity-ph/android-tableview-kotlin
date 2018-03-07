@@ -1,0 +1,66 @@
+<!--
+  ~ Copyright 2018 Jeremy Patrick Pacabis
+  ~ Copyright 2017-2018 Evren Coşkun
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<resources>
+    <!-- app properties -->
+    <string name="app_name">Kotlin TableView Library Demo</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="select_table_view">Select TableView to display…</string>
+    <string name="loading">Loading…</string>
+    <string name="query">Query table…</string>
+    <string name="table_pagination_details">Page %d, showing items %d to %d.</string>
+
+    <string-array name="table_view_demos">
+        <item name="random_data_table_view">TableView (Basic)</item>
+        <item name="random_data_table_view_with_features">TableView (Advanced)</item>
+    </string-array>
+
+    <!-- menu -->
+    <string name="sort_ascending">Sort Ascending</string>
+    <string name="sort_descending">Sort Descending</string>
+    <string name="hide_row">Hide Row 3</string>
+    <string name="show_row">Show Row 3</string>
+    <string name="scroll_to_row_position">Scroll to Row 100</string>
+    <string name="scroll_to_column_position">Scroll to column 50</string>
+    <string name="show_hide_column">Show/Hide column 5</string>
+
+    <!-- tableview controls -->
+    <string-array name="items_per_page">
+        <item>10</item>
+        <item>20</item>
+        <item>25</item>
+        <item>50</item>
+        <item>All</item>
+    </string-array>
+    <string-array name="moods">
+        <item></item>
+        <item>Happy</item>
+        <item>Sad</item>
+    </string-array>
+    <string-array name="gender">
+        <item></item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
