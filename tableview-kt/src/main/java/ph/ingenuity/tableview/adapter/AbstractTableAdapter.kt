@@ -194,14 +194,14 @@ abstract class AbstractTableAdapter(context: Context) : ITableAdapter {
     }
 
     private fun dispatchCellDataSetChangesToListeners(newCellItems: List<List<Any>>) {
-        dataSetChangedListeners?.let { it.forEach { it.onCellItemsChanged(newCellItems) } }
+        dataSetChangedListeners.let { it.forEach { it.onCellItemsChanged(newCellItems) } }
     }
 
     private fun dispatchColumnHeaderDataSetChangesToListeners(newColumnHeaderItems: List<Any>) {
-        dataSetChangedListeners?.let { it.forEach { it.onColumnHeaderItemsChanged(newColumnHeaderItems) } }
+        dataSetChangedListeners.let { it.forEach { it.onColumnHeaderItemsChanged(newColumnHeaderItems) } }
     }
 
     private fun dispatchRowHeaderDataSetChangesToListeners(newRowHeaderItems: List<Any>) {
-        dataSetChangedListeners?.let { it.forEach { it.onRowHeaderItemsChanged(newRowHeaderItems) } }
+        dataSetChangedListeners.let { it.forEach { it.onRowHeaderItemsChanged(newRowHeaderItems) } }
     }
 }
