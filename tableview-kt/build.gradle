@@ -27,6 +27,67 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.jfrog.bintray'
+
+apply plugin: 'com.github.dcendents.android-maven'
+
+def props = new Properties()
+props.load(new FileReader(rootProject.file("release.properties")))
+
+// Bintray properties
+def projectVersionCode = Integer.parseInt(projectVersionCode)
+def libDescription = libDescription
+def libArtifactId = libArtifactId
+def libGroupId = libGroupId
+def libUrl = libUrl
+def libGit = libGit
+
+// Maven properties
+group = libGroupId
+version = projectVersionName
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name libArtifactId
+            description libDescription
+            url libUrl
+            inceptionYear '2018'
+
+            packaging 'aar'
+            groupId libGroupId
+            artifactId libArtifactId
+            version projectVersionName
+
+            licenses {
+                license {
+                    name 'MIT'
+                    url libLicenseUrl
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    user = props.bintray_user
+    key = props.bintray_api_key
+    pkg {
+        repo = libGroupId
+        name = libArtifactId
+        licenses = ['MIT']
+        vcsUrl = libGit
+        version {
+            name = projectVersionName
+            gpg {
+                sign = true
+                passphrase = props.bintray_gpg_passphrase
+            }
+        }
+    }
+    configurations = ['archives']
+}
+
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
@@ -56,6 +117,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     testImplementation 'junit:junit:4.12'
 }
+
 repositories {
     mavenCentral()
 }
