@@ -52,7 +52,7 @@ class CellRowRecyclerViewAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        return tableAdapter!!.getCellItemViewType(position)
+        return tableAdapter.getCellItemViewType(position)
     }
 
     override fun onViewAttachedToWindow(holder: RecyclerView.ViewHolder) {
