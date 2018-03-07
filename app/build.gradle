@@ -31,7 +31,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
     defaultConfig {
-        applicationId "ph.ingenuity.tableview"
+        applicationId "ph.ingenuity.tableviewdemo"
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
@@ -49,11 +49,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support:recyclerview-v7:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation project(":tableview-kt")
+    implementation project(':tableview')
 
     testImplementation 'junit:junit:4.12'
 

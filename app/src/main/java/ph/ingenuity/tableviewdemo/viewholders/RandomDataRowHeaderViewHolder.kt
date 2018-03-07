@@ -21,4 +21,19 @@
  * SOFTWARE.
  */
 
-include ':app', ':tableview'
+package ph.ingenuity.tableviewdemo.viewholders
+
+import android.view.View
+import android.widget.TextView
+import ph.ingenuity.tableview.adapter.recyclerview.holder.AbstractViewHolder
+import ph.ingenuity.tableviewdemo.R
+
+/**
+ * Created by jeremypacabis on March 02, 2018.
+ * @author Jeremy Patrick Pacabis <jeremy@ingenuity.ph>
+ * ph.ingenuity.tableview.viewholders <android-tableview-kotlin>
+ */
+class RandomDataRowHeaderViewHolder(itemView: View) : AbstractViewHolder(itemView) {
+    val cellTextView: TextView
+        get() = itemView.findViewById(R.id.row_header_text)
+}

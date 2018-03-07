@@ -21,4 +21,25 @@
  * SOFTWARE.
  */
 
-include ':app', ':tableview'
+package ph.ingenuity.tableviewdemo.models
+
+import ph.ingenuity.tableview.feature.filter.Filterable
+import ph.ingenuity.tableview.feature.sort.Sortable
+
+/**
+ * Created by jeremypacabis on March 02, 2018.
+ * @author Jeremy Patrick Pacabis <jeremy@ingenuity.ph>
+ * ph.ingenuity.tableview.models <android-tableview-kotlin>
+ */
+class RandomDataCell(
+        _data: Any,
+        _id: String = _data.hashCode().toString(),
+        _filter: String = _data.toString()
+) : Filterable, Sortable {
+
+    override var filterableKeyword: String = _filter
+
+    override var id: String = _id
+
+    override var content: Any = _data
+}
