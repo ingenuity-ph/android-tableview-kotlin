@@ -1,6 +1,8 @@
 # Android TableView (Kotlin)
 
-_Android's missing TableView component._ This Kotlin version is based on the original
+##### _Android's missing TableView component._ 
+
+This Kotlin version is based on the original
 [TableView](https://github.com/evrencoskun/TableView) implementation by
 [Evren Coşkun](https://github.com/evrencoskun/). This component uses RecyclerViews for displaying
 column headers, row headers and cells.
@@ -46,9 +48,7 @@ to your application's `build.gradle` file.
 
 ```
     dependencies {
-        ...
         implementation 'ph.ingenuity.tableview_kt:tableview_kt:0.1.0-alpha'
-        ...
     }
 ```
 
@@ -65,18 +65,15 @@ to your application's `build.gradle` file.
 ##### Basic
 
 ```xml
-...
     <ph.ingenuity.tableview.TableView
         android:id="@+id/table_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-...
 ```
 
 ##### Customized
 
 ```xml
-...
     <ph.ingenuity.tableview.TableView
         android:id="@+id/table_view"
         android:layout_width="match_parent"
@@ -89,13 +86,10 @@ to your application's `build.gradle` file.
         app:table_show_horizontal_separator="true"
         app:table_show_vertical_separator="true"
         app:table_unselected_color="@color/table_view_default_unselected_background_color" />
-...
 ```
 
 ```kotlin
-...
     val tableView = findViewById(R.id.table_view)
-...
 ```
 
 ###### Customizable Attributes
@@ -239,7 +233,6 @@ classes to extend `AbstractViewHolder` class.
 `AbstractTableAdapter` class requires three lists for the column header, row header and cell items.
 
 ```kotlin
-...
     // Retrieve your data from local storage or API
     val cellsList = randomDataFactory.randomCellsList as List<List<Any>>
     val rowHeadersList = randomDataFactory.randomRowHeadersList as List<Any>
@@ -253,7 +246,6 @@ classes to extend `AbstractViewHolder` class.
     
     // Set the data to the adapter
     tableAdapter.setAllItems(cellsList, columnHeadersList, rowHeadersList)
-...
 ```
 
 ### 4. Setting an ActionListener to the TableView
@@ -318,9 +310,7 @@ cell click and long pressed actions. The custom TableViewListener must implement
 ###### Setting the TableViewListener to the TableView
 
 ```kotlin
-...
     tableView.tableViewListener = TableViewListener(tableView)
-...
 ```
 
 > By now, we should have a working TableView with displayed data and action listeners.
@@ -335,73 +325,55 @@ The data set in the TableView can be updated by updating the TableViewAdapter.
 - To **add a row**:
 
 ```kotlin
-...
     tableView.adapter.addRow(position, rowHeaderItem, cellItems)
-...
 ```
 
 - To **add a multiple rows**:
 
 ```kotlin
-...
     tableView.adapter.addRowRange(position, rowHeaderItems, cellItems)
-...
 ```
 
 - To **remove a row**:
 
 ```kotlin
-...
     tableView.adapter.removeRow(position)
-...
 ``` 
 
 - To **remove multiple rows**:
 
 ```kotlin
-...
     tableView.adapter.removeRow(position, count)
-...
 ``` 
 
 - To **update a row header**:
 
 ```kotlin
-...
     tableView.adapter.changeRowHeaderItem(position, rowHeaderItem)
-...
 ```
 
 - To **update multiple row headers**:
 
 ```kotlin
-...
     tableView.adapter.changeRowHeaderItemRange(position, rowHeaderItems)
-...
 ``` 
 
 - To **update a column header**:
 
 ```kotlin
-...
     tableView.adapter.changeColumnHeader(position, columnHeaderItem)
-...
 ```
 
 - To **update multiple column headers**:
 
 ```kotlin
-...
     tableView.adapter.changeColumnHeaderRange(position, columnHeaderItems)
-...
 ``` 
 
 - To **update a cell item**:
 
 ```kotlin
-...
     tableView.adapter.changeCellItem(column, row, cellItem)
-...
 ``` 
 
 ### TableView visibility controls
@@ -412,83 +384,63 @@ controls in the TableView instance.
 - To **show** a row:
 
 ```kotlin
-...
     tableView.showRow(row)
-...
 ```
 
 - To **hide** the row:
 
 ```kotlin
-...
     tableView.hideRow(row)
-...
 ```
 
 - To **show all hidden** rows:
 
 ```kotlin
-...
     tableView.showAllHiddenRows()
-...
 ```
 
 - TableView store a map that contains all hidden rows.
 This method will **clear the list of hidden rows**:
 
 ```kotlin
-...
     tableView.clearHiddenRowList()
-...
 ```
 
 - To **check the visibility state** of a row:
 
 ```kotlin
-...
     tableView.isRowVisible(row)
-...
 ```
 
 - To **show** a column:
 
 ```kotlin
-...
     tableView.showColumn(column)
-...
 ```
 
 - To **hide** a column:
 
 ```kotlin
-...
     tableView.hideColumn(column)
-...
 ```
 
 - To **show all hidden** columns
 
 ```kotlin
-...
     tableView.showAllHiddenColumns()
-...
 ```
 
 - TableView store a map that contains all hidden columns.
 This method will **clear the list of hidden columns**:
 
 ```kotlin
-...
     tableView.clearHiddenColumnList()
-...
 ```
 
 - To **check the visibility state** of a column:
 
 ```kotlin
-...
     tableView.isColumnVisible(column)
-...
 ```
 
 ### TableView advanced properties and methods
@@ -496,53 +448,39 @@ This method will **clear the list of hidden columns**:
 - To recalculate column width:
 
 ```kotlin
-...
     tableView.remeasureColumnWidth(column)
-...
 ``` 
 
 - To ignore column width calculation for better performance:
   
 ```kotlin
-...
     tableView.hasFixedWidth = false
-...
 ``` 
 
 - To ignore setting selection colors that are displayed by user interaction:
 
 ```kotlin
-...
     tableView.ignoreSelectionColors = false
-...
 ``` 
 
 - To show or hide separators of the TableView:
 
 ```kotlin
-...
     tableView.showHorizontalSeparators = Boolean
-...
 ```
 
 ```kotlin
-...
     tableView.showVerticalSeparators = Boolean
-...
 ```
 
 - To programmatically scroll to a row or column position:
 
 ```kotlin
-...
     tableView.scrollToColumn(column)
-...
 ```
 
 ```kotlin
-...
     tableView.scrollToRow(row)
-...
 ```
 
 ### Sorting
@@ -581,17 +519,13 @@ classes or the models. The `Sortable` interface requires you to provide a unique
 - To **sort the TableView according to a specified column**:
 
 ```kotlin
-...
     tableView.sortColumn(column, sortState)
-...
 ```
 
 - To **get the current sorting state of a column**:
 
 ```kotlin
-...
     tableView.getColumnSortState(column)
-...
 ```
 
 ###### Sorting states
@@ -608,17 +542,15 @@ interface to your `ColumnHeaderViewHolder` class.
 - This method is called after every sorting process:
 
 ```kotlin
-...
-    onSortingStatusChanged(SortState sortState)
-...
+    onSortingStatusChanged(SortState sortState) {
+        // do something here...
+    }
 ```
 
 - To get the sort state of a column header, just access the `sortState` object:
 
 ```kotlin
-...
     columnHeaderViewHolder.sortState
-...
 ```
 
 ### Filtering
@@ -649,18 +581,12 @@ the cell data based on a filter query.
 An instance of the `Filter` class must be created and pass the TableView to be filtered.
 
 ```kotlin
-...
-    ...
     private lateinit var filter: Filter
-    ...
     
     initialize() {
-        ...
         setUpTableView()
         filter = Filter(tableView)
-        ...
     }
-...
 ```
 
 ###### Filtering process
@@ -670,7 +596,6 @@ filter the whole tabele data, a column or combination. Clearing a filter can be 
 passing an **empty** string as filterKeyword (`""` and not `null`).
 
 ```kotlin
-...
     // filtering whole table data
     fun filterWholeTable(filterKeyword: String) = filter.set(filterKeyword)
     
@@ -682,7 +607,6 @@ passing an **empty** string as filterKeyword (`""` and not `null`).
     
     // clear filter for a specific column
     fun clearFilterForThisColumn(column: Int) = filter.set(column, "")
-...
 ```
 
 ###### Adding a `FilterChangedListener`
@@ -691,8 +615,6 @@ A `FilterChangedListener` object can be added to the TableView for handling data
 filtering process.
 
 ```kotlin
-...
-    ...
     private val filterChangedListener = object : FilterChangedListener {
 
         fun onFilterChanged(
@@ -709,16 +631,12 @@ filtering process.
             // do something here...
         }
     }
-    ...
     
     initialize() {
-        ...
         setUpTableView()
         filter = Filter(tableView)
         tableView.filterHandler.addFilterChangedListener(filterChangedListener)
-        ...
     }
-...
 ```
 
 ### Pagination
@@ -746,36 +664,26 @@ the `OnTableViewPageTurnedListener`. By default, if no ITEMS_PER_PAGE specified,
 be paginated into **10** items per page.
 
 ```kotlin
-...
-    ...
     private lateinit var pagination: Pagination
-    ...
     
     initialize() {
-        ...
         setUpTableView()
         pagination = Pagination(tableView)
-        ...
     }
-...
 ```
 
 - **Loading the next page of items** into the TableView using the `loadNextPage()` method.
 You can assign this to your implementation of nextPageButton onClick action:
 
 ```kotlin
-...
     fun nextTablePage() = pagination.loadNextPage()
-...
 ```
 
 - **Loading the previous page of items** into the TableView using the `loadPreviousPage()` method.
 You can assign this to your implementation of previousPageButton onClick action:
 
 ```kotlin
-...
     fun previousTablePage() = pagination.loadPreviousPage()
-...
 ```
 
 - You can navigate through the pages by **going to a specific page directly** using the
@@ -783,9 +691,7 @@ You can assign this to your implementation of previousPageButton onClick action:
 action (using TextWatcher):
 
 ```kotlin
-...
     fun loadTablePage(page: Int) = pagination.loadPage(page)
-...
 ```
 
 - You can customize and **set the number of items to be displayed per page** of the TableView
@@ -793,11 +699,9 @@ using the `itemsPerPage` property of the pagination. You can assign this to your
 with the number of items per page list:
 
 ```kotlin
-...
     fun setTableItemsPerPage(numItems: Int) {
         pagination.itemsPerPage = numItems
     }
-...
 ```
 
 ###### Adding an `OnTableViewPageTurnedListener`
@@ -807,8 +711,6 @@ if you want to do something each time _a page is turned_ (e.g. previous, next, g
 change items per page action is called):
 
 ```kotlin
-...
-    ...
     private val onTableViewPageTurnedListener =
             object : Pagination.OnTableViewPageTurnedListener {
             
@@ -816,22 +718,18 @@ change items per page action is called):
                     // do something here...
                 }
             }
-    ...
     
     initialize() {
-        ...
         setUpTableView()
         pagination = Pagination(tableView)
         pagination.onTableViewPageTurnedListener = onTableViewPageTurnedListener
-        ...
     }
-...
 ```
 
 ## Sample Applications
 
 - This repository contains a Kotlin demo application implementing the TableView library.
-- [Contact me](mailto:jeremy@ingenuity.ph)if you want your app to be listed here.
+- [Contact me](mailto:jeremy@ingenuity.ph) if you want your app to be listed here.
 
 ## Articles
 
