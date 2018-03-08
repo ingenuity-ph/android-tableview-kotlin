@@ -8,7 +8,7 @@ This Kotlin version is based on the original
 column headers, row headers and cells.
 
 <p align="center">
-![TableView demo](tableview-demo-v0.1.0-alpha.gif)
+    <img src="https://github.com/ingenuity-ph/android-tableview-kotlin/blob/master/tableview-demo-v0.1.0-alpha.gif">
 </p>
 
 ## Features
