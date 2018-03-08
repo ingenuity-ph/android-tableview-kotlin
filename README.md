@@ -7,6 +7,10 @@ This Kotlin version is based on the original
 [Evren Coşkun](https://github.com/evrencoskun/). This component uses RecyclerViews for displaying
 column headers, row headers and cells.
 
+<p align="center">
+![TableView demo](tableview-demo-v0.1.0-alpha.gif)
+</p>
+
 ## Features
 
 - [x] Calculated fixed width based on the largest cell.
