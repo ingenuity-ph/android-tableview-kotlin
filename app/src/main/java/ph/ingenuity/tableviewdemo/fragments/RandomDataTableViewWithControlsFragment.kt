@@ -41,6 +41,7 @@ import ph.ingenuity.tableview.feature.pagination.Pagination
 import ph.ingenuity.tableviewdemo.R
 import ph.ingenuity.tableviewdemo.adapters.RandomDataTableViewAdapter
 import ph.ingenuity.tableviewdemo.data.RandomDataFactory
+import ph.ingenuity.tableviewdemo.listeners.TableViewListener
 
 /**
  * Created by jeremypacabis on March 05, 2018.
@@ -126,6 +127,7 @@ class RandomDataTableViewWithControlsFragment : Fragment() {
         val rowHeadersList = randomDataFactory.randomRowHeadersList as List<Any>
         val columnHeadersList = randomDataFactory.randomColumnHeadersList as List<Any>
         tableView.adapter = tableAdapter
+        tableView.tableViewListener = TableViewListener(tableView)
         tableAdapter.setAllItems(cellsList, columnHeadersList, rowHeadersList)
         pagination = Pagination(tableView)
         filter = Filter(tableView)
