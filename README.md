@@ -47,12 +47,12 @@ for the latest version and changelog.
 ### Project integration
 
 To use this library in your Android project, add this dependency line
-`implementation 'ph.ingenuity.tableview_kt:tableview_kt:0.1.0-alpha'`
+`implementation 'ph.ingenuity.tableview:tableview:0.1.0-alpha'`
 to your application's `build.gradle` file.
 
 ```
     dependencies {
-        implementation 'ph.ingenuity.tableview_kt:tableview_kt:0.1.0-alpha'
+        implementation 'ph.ingenuity.tableview:tableview:0.1.0-alpha'
     }
 ```
 
