@@ -32,7 +32,7 @@ import ph.ingenuity.tableview.feature.sort.SortState.UNSORTED
  * @author Jeremy Patrick Pacabis <jeremy@ingenuity.ph>
  * ph.ingenuity.tableview.adapter.recyclerview.holder <android-tableview-kotlin>
  */
-class AbstractSorterViewHolder(itemView: View) : AbstractViewHolder(itemView) {
+open class AbstractSorterViewHolder(itemView: View) : AbstractViewHolder(itemView) {
 
     var sortState = UNSORTED
         private set
